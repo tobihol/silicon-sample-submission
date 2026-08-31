@@ -1,0 +1,11 @@
+[project]
+name = "silicon-sample-submission"
+version = "0.1.0"
+description = "SODA Lab entry for the Silicon Sample Benchmark"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2",
+    "pyreadstat>=1.2.7",
+]

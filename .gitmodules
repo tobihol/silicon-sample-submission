@@ -1,0 +1,3 @@
+[submodule "silicon-sample-submission-template"]
+	path = silicon-sample-submission-template
+	url = https://github.com/janpfander/silicon-sample-submission

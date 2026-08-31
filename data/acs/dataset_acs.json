@@ -1,0 +1,33 @@
+{
+  "name": "acs",
+  "root": "data/acs",
+  "data_files": [
+    "data/acs/downloads/unix_pus/psam_pusa.sas7bdat",
+    "data/acs/downloads/unix_pus/psam_pusb.sas7bdat"
+  ],
+  "primary": [
+    "data/acs/downloads/unix_pus/psam_pusa.sas7bdat",
+    "data/acs/downloads/unix_pus/psam_pusb.sas7bdat"
+  ],
+  "docs": [
+    "data/acs/README.md",
+    "data/acs/downloads/2018AccuracyPUMS.pdf",
+    "data/acs/downloads/PUMS_Data_Dictionary_2018.pdf",
+    "data/acs/downloads/quest18.pdf",
+    "data/acs/downloads/unix_pus/ACS2018_PUMS_README.pdf"
+  ],
+  "publications": [
+    "data/acs/publications/ACS2018_PUMS_README.pdf",
+    "data/acs/publications/Comparative Study of Imputation Methods for Multivariate Ordinal Data (2018 ACS PUMS).pdf",
+    "data/acs/publications/Cornell YTI 2018 Disability Status Report - United States.pdf",
+    "data/acs/publications/Kelly Deichert Holley 2020 - Direct Care Workforce - Where the Boys Really Are (GSA abstract).pdf",
+    "data/acs/publications/Oreffice Sansone 2022 - Transportation to Work by Sexual Orientation.pdf",
+    "data/acs/publications/Sansone Carpenter 2020 - Turings Children - Sexual Minorities in STEM.pdf",
+    "data/acs/publications/Sassler Meyerhofer 2023 - Gender Wage Gap Among College-Educated Computer Science Workers.pdf",
+    "data/acs/publications/UNH IOD 2019 Annual Report on People with Disabilities in America.pdf",
+    "data/acs/publications/Understanding and Using the ACS PUMS Files - What Data Users Need to Know (2021).pdf",
+    "data/acs/publications/pums_estimates_18.csv"
+  ],
+  "synthetic_dir": "data/acs/synthetic",
+  "data_public": true
+}

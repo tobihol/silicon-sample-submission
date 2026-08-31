@@ -1,0 +1,80 @@
+# operator state: auth tokens, arm harness state, run snapshots
+.container-state/
+
+# raw survey data and docs are fetched, not committed (see data/README.md)
+data/*/downloads/
+
+# run products stay local until promoted deliberately
+idea_*/run/runs/*
+!idea_*/run/runs/.gitkeep
+# Deposit-critical artifacts must survive a disk failure before the Aug 28-31 lock:
+!idea_*/run/runs/*target*/
+!idea_*/run/runs/*target*/**
+!idea_*/run/runs/scoreboard.csv
+
+.venv/
+__pycache__/
+.DS_Store
+
+# License scrub 2026-08-24 (docs/legal-review-2026-08-24.md §4): respondent-level
+# derivatives and verbatim stimuli from no-license/all-rights-reserved sources, plus
+# unverified third-party PDFs. Disk-only forever — regenerable via tools/build_*.py
+# and extract scripts from data/*/downloads/ (see the READMEs next to them).
+idea_01/run/inputs/derived/bbprime2025_analysis.csv
+idea_01/run/inputs/derived/dablander2025.csv
+idea_01/run/inputs/derived/gligoric2025_trust.csv
+idea_01/run/inputs/derived/koetke2024_study5.csv
+idea_01/run/inputs/derived/orchinik2024_bovitz.csv
+idea_01/run/inputs/texts/bbprime2025_arms.json
+idea_01/run/inputs/texts/dablander2025_arms.json
+idea_01/run/inputs/texts/gligoric2025_arms.json
+idea_01/run/inputs/texts/goldwert2026_arms.json
+idea_01/run/inputs/texts/koetke2024_arms.json
+idea_01/run/inputs/texts/orchinik2024_arms.json
+idea_01/run/inputs/texts/orchinik2024_items.json
+idea_01/run/inputs/texts/voelkel2024_arms.json
+idea_01/run/inputs/texts/voelkel2026_arms.json
+data/acs/publications/Comparative*.pdf
+data/acs/publications/Cornell*.pdf
+data/acs/publications/Kelly*.pdf
+data/acs/publications/UNH*.pdf
+
+# carved held-out truths beside their raw data (host only; excluded from idea_02's mount by
+# idea_02/launch.env; never committed — same policy as downloads/)
+data/*/carved/
+# idea_02 operator eval state: live-written logs, sealed internal-test scores, audits —
+# all regenerable, none belongs in git (sealed scores especially must not ride a public push)
+idea_*/eval/
+
+# idea_02: briefs embedding verbatim stimuli from no-licence sources stay disk-only
+# (same policy as idea_01/run/inputs/texts/*); CC0/CC-BY/CC-BY-SA briefs are tracked.
+idea_02/run/inputs/val/goldwert2026/
+idea_02/run/inputs/val/orchinik2024/
+idea_02/run/inputs/val/dablander2025/
+# derived, rebuilt by utils/heldout/build_idea01_lib.py (scanner-verified redaction)
+idea_02/run/inputs/idea01_lib/
+# CC-BY-SA share-alike source, kept disk-only like the other derived extracts
+idea_01/run/inputs/derived/kerwer2025.csv
+
+# agent binary state (regenerated each session; not for versioning)
+idea_*/run/tools/*.pkl
+
+# idea_03: everything under inputs/ is regenerable by utils/heldout/setup_idea03.sh and
+# license-mixed (briefs quote no-license stimuli; organizer code has no license; idea01_lib
+# is a derived redaction) — disk-only, like the idea_02 equivalents above
+idea_03/run/inputs/
+
+# agent reconnaissance intermediates: working copies of mounted raw data (SCE/tappin/hewitt),
+# regenerable by the committed recon scripts; disk-only to keep the repo lean
+idea_02/run/tools/recon/
+
+# idea_04: arm-level holdout truths beside their raw data (host only, like carved/); everything
+# under inputs/ is regenerable by utils/heldout/setup_idea04.sh and license-mixed — disk-only
+data/*/carved_arms/
+idea_04/run/inputs/
+
+# idea_03 raw session logs for escrow (class B): ~330 MB, quote no-licence stimuli; disk-only, never pushed
+submission/escrow/
+
+# operator-local notes, never published
+.local/
